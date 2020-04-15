@@ -2,6 +2,7 @@ package product.impl;
 
 import money.Money;
 import product.Product;
+import product.impl.type.DopingType;
 
 import java.util.Objects;
 

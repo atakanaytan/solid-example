@@ -1,4 +1,4 @@
-package product.impl;
+package product.impl.type;
 
 public enum DopingType {
 
