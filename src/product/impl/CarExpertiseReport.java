@@ -22,21 +22,17 @@ public class CarExpertiseReport implements ReportProduct {
 
     @Override
     public String getName() {
-        return name;
+        return this.name;
     }
 
     @Override
     public Money getPrice() {
-        return price;
+        return this.price;
     }
 
     @Override
     public void addReportItem(ReportItem reportItem) {
         this.extraServices.add(reportItem);
-    }
-
-    public void setPrice(Money price) {
-        this.price = price;
     }
 
     public List<String> getPackages() {
@@ -56,5 +52,14 @@ public class CarExpertiseReport implements ReportProduct {
         this.extraServices = extraServices;
     }
 
-
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("CarExpertiseReport{");
+        sb.append("name='").append(name).append('\'');
+        sb.append(", price=").append(price);
+        sb.append(", packages=").append(packages);
+        sb.append(", extraServices=").append(extraServices);
+        sb.append('}');
+        return sb.toString();
+    }
 }

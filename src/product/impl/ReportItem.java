@@ -23,4 +23,13 @@ public class ReportItem implements Product {
     public Money getPrice() {
         return this.price;
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("ReportItem{");
+        sb.append("name='").append(name).append('\'');
+        sb.append(", price=").append(price);
+        sb.append('}');
+        return sb.toString();
+    }
 }

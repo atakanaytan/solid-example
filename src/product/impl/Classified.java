@@ -27,12 +27,12 @@ public class Classified implements ClassifiedProduct {
 
     @Override
     public String getName() {
-        return name;
+        return this.name;
     }
 
     @Override
     public Money getPrice() {
-        return price;
+        return this.price;
     }
 
     public String getTitle() {
@@ -44,12 +44,22 @@ public class Classified implements ClassifiedProduct {
     }
 
     public String getDescription() {
-        return description;
+        return this.description;
     }
 
     public void setDescription(String description) {
         this.description = description;
     }
 
-
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Classified{");
+        sb.append("name='").append(name).append('\'');
+        sb.append(", price=").append(price);
+        sb.append(", title='").append(title).append('\'');
+        sb.append(", description='").append(description).append('\'');
+        sb.append(", dopingList=").append(dopingList);
+        sb.append('}');
+        return sb.toString();
+    }
 }

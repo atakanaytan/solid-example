@@ -51,4 +51,13 @@ public class Doping implements Product {
         return Objects.hash(getName(), getPrice(), getType());
     }
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Doping{");
+        sb.append("name='").append(name).append('\'');
+        sb.append(", price=").append(price);
+        sb.append(", type=").append(type);
+        sb.append('}');
+        return sb.toString();
+    }
 }

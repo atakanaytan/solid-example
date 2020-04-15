@@ -22,4 +22,13 @@ public class KDVTax implements Tax{
     public Money getTaxValue() {
         return this.value;
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("KDVTax{");
+        sb.append("name='").append(name).append('\'');
+        sb.append(", value=").append(value);
+        sb.append('}');
+        return sb.toString();
+    }
 }
