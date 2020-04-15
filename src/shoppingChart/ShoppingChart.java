@@ -6,7 +6,9 @@ import java.util.List;
 
 public class ShoppingChart {
 
+
     private List<BasketItem> basketItemList;
+
 
     public ShoppingChart(List<BasketItem> basketItemList) {
         this.basketItemList = basketItemList;
@@ -43,4 +45,5 @@ public class ShoppingChart {
         sb.append('}');
         return sb.toString();
     }
+
 }

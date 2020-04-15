@@ -16,4 +16,5 @@ public class OTVTaxCalculator implements TaxCalculator{
 
         return new OTVTax("OTV", new Money(taxValue, price.getCurrency()));
     }
+
 }

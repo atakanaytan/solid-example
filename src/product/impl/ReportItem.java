@@ -5,9 +5,10 @@ import product.Product;
 
 public class ReportItem implements Product {
 
-    private String name;
 
+    private String name;
     private Money price;
+
 
     public ReportItem(String name, Money price) {
         this.name = name;
@@ -32,4 +33,5 @@ public class ReportItem implements Product {
         sb.append('}');
         return sb.toString();
     }
+
 }

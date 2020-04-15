@@ -2,8 +2,10 @@ package money;
 
 public class Money {
 
+
     private double value;
     private Currency currency;
+
 
     public Money(double value, Currency currency) {
         this.value = value;
@@ -34,4 +36,5 @@ public class Money {
         sb.append('}');
         return sb.toString();
     }
+
 }

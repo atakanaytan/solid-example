@@ -4,9 +4,10 @@ import money.Money;
 
 public class KDVTax implements Tax{
 
-    public String name;
 
+    public String name;
     public Money value;
+
 
     public KDVTax(String name, Money value) {
         this.name = name;
@@ -31,4 +32,5 @@ public class KDVTax implements Tax{
         sb.append('}');
         return sb.toString();
     }
+
 }

@@ -7,12 +7,13 @@ import java.util.Set;
 
 public class Classified implements ClassifiedProduct {
 
+
     private String name;
     private Money price;
-
     private String title;
     private String description;
     private Set<Doping> dopingList;
+
 
     public Classified(String name, Money price, Set<Doping> dopingList) {
         this.name = name;
@@ -62,4 +63,5 @@ public class Classified implements ClassifiedProduct {
         sb.append('}');
         return sb.toString();
     }
+
 }

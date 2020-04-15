@@ -5,6 +5,13 @@ import basket.BasketType;
 import basketItem.builder.BasketItemBuilder;
 import money.Currency;
 import money.Money;
+import payment.integrator.ClassifiedPaymentIntegrator;
+import payment.integrator.ExpertiseReportPaymentIntegrator;
+import payment.integrator.PaymentIntegrator;
+import payment.provider.PaymentProvider;
+import payment.provider.model.AssecoPaymentProvider;
+import payment.provider.model.IyzicoPaymentProvider;
+import payment.provider.model.PreviousPayment;
 import product.ClassifiedProduct;
 import product.ReportProduct;
 import product.impl.CarExpertiseReport;
@@ -45,6 +52,20 @@ public class Main {
         shoppingChart.addBasketItem(expertiseReportBasketItem);
 
         printShoppingChart(shoppingChart);
+
+
+        PaymentProvider iyzico = new IyzicoPaymentProvider(new HashMap<Integer, PreviousPayment>());
+        PaymentProvider asseco = new AssecoPaymentProvider(new HashMap<Integer, PreviousPayment>());
+
+        PaymentIntegrator classifiedIntegrator = new ClassifiedPaymentIntegrator(asseco, BasketType.Classified);
+        PaymentIntegrator expertiseIntegrator  = new ExpertiseReportPaymentIntegrator(iyzico, BasketType.CarExpertiseReport);
+
+        int chargeIdForClassified = classifiedIntegrator.makePayment(shoppingChart);
+        int charIdForExpertiseReport = expertiseIntegrator.makePayment(shoppingChart);
+
+        System.out.println("Payed bills:");
+        System.out.println(asseco.loadInvoice(chargeIdForClassified));
+        System.out.println(iyzico.loadInvoice(charIdForExpertiseReport));
     }
 
 
@@ -53,6 +74,8 @@ public class Main {
         for (BasketItem basketItem : shoppingChart.getBasketItemList()) {
             System.out.println(basketItem);
         }
+
+        System.out.println();
     }
 
 

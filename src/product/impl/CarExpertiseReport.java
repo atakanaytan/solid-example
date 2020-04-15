@@ -8,11 +8,12 @@ import java.util.Set;
 
 public class CarExpertiseReport implements ReportProduct {
 
+
     private String name;
     private Money price;
-
     private List<String> packages;
     private Set<ReportItem> extraServices;
+
 
     public CarExpertiseReport(String name, Money price, Set<ReportItem> extraServices) {
         this.name = name;
@@ -62,4 +63,5 @@ public class CarExpertiseReport implements ReportProduct {
         sb.append('}');
         return sb.toString();
     }
+
 }

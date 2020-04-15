@@ -7,9 +7,11 @@ import java.util.Set;
 
 public class BasketItem {
 
+
     private Product product;
     private Set<Tax> taxList;
     private BasketType type;
+
 
     public BasketItem(Product product, Set<Tax> taxList, BasketType type) {
         this.product = product;
@@ -50,4 +52,5 @@ public class BasketItem {
         sb.append('}');
         return sb.toString();
     }
+
 }
